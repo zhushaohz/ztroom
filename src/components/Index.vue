@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bd">
     <div class="logo">
       <img src="../assets/zt.png">
     </div>
@@ -29,7 +29,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-body{
+.bd{
     user-select: none;
 }
 img{
@@ -39,7 +39,7 @@ a:link{
   text-decoration: none;
 }
 a {
-  color: #42b983;
+  color: #000;
 }
 .hello{
   margin-top: 10px;
@@ -57,13 +57,13 @@ a {
   margin-top: 60px;
   width: 300px;
   padding: 10px;
-  border: 1px solid #42b983;
-  color: #42b983;
+  border: 1px solid #000;
+  color: #000;
   border-radius: 10px;
   font-size: 30px;
 }
 .go:hover{
-  background-color: #42b983;
+  background-color: #000;
 }
 .go:hover a{
   color: #fff;
