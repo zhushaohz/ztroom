@@ -56,13 +56,12 @@ export default {
       } else if (this.value === '') {
         alert('请输入性别')
       } else {
-        let data = {'name': this.name, 'email': this.email, 'pass': this.pass, 'gender': this.value}
+        let data = 'name=' + this.name + '&email=' + this.email + '&pass=' + this.pass + '&gender=' + this.value
         console.log(data)
-        this.$http.post('http://localhost:8080/signup/vuesignup.php', data).then((res) => {
+        this.$axios.post('/api/signup/vuesignup.php', data).then((res) => {
           console.log(res)
         })
       }
-      console.log('submit!')
     }
   }
 }
