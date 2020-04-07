@@ -4,6 +4,7 @@ import Index from '@/components/Index'
 import School from '@/components/School'
 import Signup from '@/components/Signup'
 import Login from '@/components/Login'
+import User from '@/components/User'
 Vue.use(Router)
 
 export default new Router({
@@ -27,6 +28,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/user',
+      name: 'User',
+      component: User
     }
   ]
 })

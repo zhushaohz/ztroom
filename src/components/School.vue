@@ -9,7 +9,7 @@
         <router-link class="nav-link" to="/login">登录</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">账户</a>
+        <router-link class="nav-link" to="/user">账户</router-link>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">教程</a>
