@@ -15,7 +15,58 @@
         <router-link class="nav-link" to="/help">教程</router-link>
       </li>
     </ul>
-    
+    <div class="room">
+    <el-row type="flex" justify="space-around">
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+    </el-row>
+    <el-row type="flex" justify="space-around">
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+    </el-row>
+    <el-row type="flex" justify="space-around">
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+    </el-row>
+    <el-row type="flex" justify="space-around">
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+    </el-row>
+    <el-row type="flex" justify="space-around">
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+        <el-col :span="2"><div class="seat">1</div></el-col>
+    </el-row>
+    </div>
   </div>
 </template>
 
@@ -24,7 +75,7 @@ export default {
   name: 'Room',
   data () {
     return {
-      msg: '选择一个纸条Room'
+      msg: 'Room1'
     }
   }
 }
@@ -49,5 +100,18 @@ h1 {
     width: 100%;
     --underline-color: #cdcdcd;
     --active-link-color: #000;
+}
+.room{
+    width: 70%;
+    margin: auto;
+}
+.el-row{
+    margin-top: 20px;
+}
+.seat{
+    border: 1px solid #000;
+    width: 100%;
+    height: 70px;
+    border-radius: 4px;
 }
 </style>
