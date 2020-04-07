@@ -16,7 +16,7 @@
       </li>
     </ul>
     <el-row type="flex" justify="space-around">
-        <el-col :span="4"><mcard text="Room1"></mcard></el-col>
+        <el-col :span="4"><mcard text="Room1" v-on:click="room"></mcard></el-col>
         <el-col :span="4"><mcard text="Room2"></mcard></el-col>
         <el-col :span="4"><mcard text="Room3"></mcard></el-col>
         <el-col :span="4"><mcard text="Room4"></mcard></el-col>
@@ -54,6 +54,11 @@ export default {
       setTimeout(function () {
         this.$router.push('/login')
       }.bind(this), 6000)
+    }
+  },
+  methods: {
+    room () {
+      this.$message('这是一条消息提示')
     }
   },
   components: {

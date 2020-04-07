@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/Index'
 import School from '@/components/School'
+import Room from '@/components/Room'
 import Signup from '@/components/Signup'
 import Login from '@/components/Login'
 import User from '@/components/User'
@@ -39,6 +40,11 @@ export default new Router({
       path: '/help',
       name: 'Help',
       component: Help
+    },
+    {
+      path: '/room',
+      name: 'Room',
+      component: Room
     }
   ]
 })
