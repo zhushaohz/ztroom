@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'School',
+  name: 'Help',
   data () {
     return {
       msg: '选择一个纸条Room'

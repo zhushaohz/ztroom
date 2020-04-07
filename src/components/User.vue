@@ -76,4 +76,7 @@ h1 {
     --underline-color: #cdcdcd;
     --active-link-color: #000;
 }
+button{
+    outline: none;
+}
 </style>
