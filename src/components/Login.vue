@@ -9,10 +9,10 @@
         <router-link class="nav-link" to="/login">登录</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">账户</a>
+        <router-link class="nav-link" to="/user">账户</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">教程</a>
+        <router-link class="nav-link" to="/help">教程</router-link>
       </li>
     </ul>
     <div class="biao">
@@ -41,6 +41,10 @@ export default {
   mounted () {
   /* 页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录 */
     if (getCookie('username')) {
+      this.$message({
+        message: '您已登录',
+        type: 'success'
+      })
       setTimeout(function () {
         this.$router.push('/school')
       }.bind(this), 1000)
@@ -58,12 +62,17 @@ export default {
         this.$axios.post('/api/signup/vuelogin.php', data).then((res) => {
           console.log(res)
           if (res.data[0] === '密码正确') {
-            setCookie('username', this.username, 10000 * 60)
+            this.$message({
+              message: '登录成功',
+              type: 'success'
+            })
+            setCookie('username', res.data[1], 10000 * 60)
             setTimeout(function () {
               this.$router.push('/school')
             }.bind(this), 1000)
+          } else {
+            this.$message.error('登录失败，请检查邮箱和密码是否正确！')
           }
-          //
         })
       }
     }

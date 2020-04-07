@@ -9,10 +9,10 @@
         <router-link class="nav-link" to="/login">登录</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">账户</a>
+        <router-link class="nav-link" to="/user">账户</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">教程</a>
+        <router-link class="nav-link" to="/help">教程</router-link>
       </li>
     </ul>
     <div class="biao">
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import {getCookie} from '../assets/cookie.js'
 export default {
   name: 'School',
   data () {
@@ -47,19 +48,57 @@ export default {
       value: ''
     }
   },
+  mounted () {
+  /* 页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录 */
+    if (getCookie('username')) {
+      this.$message({
+        message: '您已登录',
+        type: 'success'
+      })
+      setTimeout(function () {
+        this.$router.push('/school')
+      }.bind(this), 1000)
+    }
+  },
   methods: {
     register () {
       if (this.name === '' || this.pass === '') {
-        alert('请输入用户名或密码')
+        // alert('请输入用户名或密码')
+        this.$alert('请输入用户名或密码', '纸条Room', {
+          confirmButtonText: '确定',
+          callback: action => {
+          }
+        })
       } else if (this.email === '') {
-        alert('请输入邮箱')
+        // alert('请输入邮箱')
+        this.$alert('请输入邮箱', '纸条Room', {
+          confirmButtonText: '确定',
+          callback: action => {
+          }
+        })
       } else if (this.value === '') {
-        alert('请输入性别')
+        // alert('请输入性别')
+        this.$alert('请输入性别', '纸条Room', {
+          confirmButtonText: '确定',
+          callback: action => {
+          }
+        })
       } else {
         let data = 'name=' + this.name + '&email=' + this.email + '&pass=' + this.pass + '&gender=' + this.value
         console.log(data)
         this.$axios.post('/api/signup/vuesignup.php', data).then((res) => {
           console.log(res)
+          if (res.data === '注册成功') {
+            this.$message({
+              message: '注册成功',
+              type: 'success'
+            })
+            setTimeout(function () {
+              this.$router.push('/login')
+            }.bind(this), 1000)
+          } else {
+            this.$message.error('注册失败，请稍后再试！')
+          }
         })
       }
     }

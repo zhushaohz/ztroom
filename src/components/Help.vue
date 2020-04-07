@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <ul class="nav justify-content-end">
       <li class="nav-item">
-        <router-link class="nav-link" to="/school">回到Room</router-link>
+        <router-link class="nav-link" to="/signup">注册</router-link>
       </li>
       <li class="nav-item">
         <router-link class="nav-link" to="/login">登录</router-link>
@@ -15,42 +15,15 @@
         <router-link class="nav-link" to="/help">教程</router-link>
       </li>
     </ul>
-    <zi-button v-on:click="logout">退出登录</zi-button>
   </div>
 </template>
 
 <script>
-import {getCookie, delCookie} from '../assets/cookie.js'
 export default {
-  name: 'User',
+  name: 'School',
   data () {
     return {
-      msg: '你好'
-    }
-  },
-  mounted () {
-  /* 页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录 */
-    if (!getCookie('username')) {
-      this.$message({
-        message: '您未登录，请注册或登录',
-        type: 'warning',
-        duration: 3000
-      })
-      setTimeout(function () {
-        this.$router.push('/login')
-      }.bind(this), 3000)
-    }
-  },
-  methods: {
-    logout () {
-      delCookie('username')
-      this.$message({
-        message: '您已退出登录',
-        type: 'success'
-      })
-      setTimeout(function () {
-        this.$router.push('/login')
-      }.bind(this), 1000)
+      msg: '选择一个纸条Room'
     }
   }
 }

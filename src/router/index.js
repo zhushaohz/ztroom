@@ -5,6 +5,7 @@ import School from '@/components/School'
 import Signup from '@/components/Signup'
 import Login from '@/components/Login'
 import User from '@/components/User'
+import Help from '@/components/Help'
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +34,11 @@ export default new Router({
       path: '/user',
       name: 'User',
       component: User
+    },
+    {
+      path: '/help',
+      name: 'Help',
+      component: Help
     }
   ]
 })

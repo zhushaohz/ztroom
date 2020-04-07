@@ -12,7 +12,7 @@
         <router-link class="nav-link" to="/user">账户</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">教程</a>
+        <router-link class="nav-link" to="/help">教程</router-link>
       </li>
     </ul>
     <el-row type="flex" justify="space-around">
@@ -34,12 +34,26 @@
 </template>
 
 <script>
+import {getCookie} from '../assets/cookie.js'
 import mcard from './Card'
 export default {
   name: 'School',
   data () {
     return {
       msg: '选择一个纸条Room'
+    }
+  },
+  mounted () {
+  /* 页面挂载获取cookie，如果存在username的cookie，则跳转到主页，不需登录 */
+    if (!getCookie('username')) {
+      this.$message({
+        message: '您未登录，请注册或登录',
+        type: 'warning',
+        duration: 5000
+      })
+      setTimeout(function () {
+        this.$router.push('/login')
+      }.bind(this), 6000)
     }
   },
   components: {
